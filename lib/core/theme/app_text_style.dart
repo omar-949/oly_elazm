@@ -23,6 +23,12 @@ class AppTextStyle {
         fontWeight: FontWeightHelper.semiBold,
       );
 
+  static TextStyle font18SemiBold({Color? color = Colors.white}) => TextStyle(
+        fontSize: 18.sp,
+        color: color,
+        fontWeight: FontWeightHelper.semiBold,
+      );
+
   static TextStyle font24Regular({Color? color = Colors.white}) => TextStyle(
         fontSize: 24.sp,
         color: color,

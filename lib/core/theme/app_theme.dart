@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'app_colors.dart';
 
@@ -8,6 +9,7 @@ class AppTheme {
         scaffoldBackgroundColor: Colors.white,
         useMaterial3: false,
         fontFamily: 'Tajawal',
+        textTheme: GoogleFonts.elMessiriTextTheme(),
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0.0,

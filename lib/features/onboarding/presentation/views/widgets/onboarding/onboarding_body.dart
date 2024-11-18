@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/core/helpers/app_imgs.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/features/onboarding/data/models/onboarding_item.dart';
-import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding_overlay.dart';
-import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding_page_content.dart';
-import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding_page_indicator.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding/onboarding_overlay.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding/onboarding_page_content.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding/onboarding_page_indicator.dart';
 
 class OnboardingBody extends StatefulWidget {
   const OnboardingBody({super.key});
@@ -78,10 +80,14 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         OnboardingOverlay(
           currentPage: currentPage,
           items: items,
-          onSkip: () => _navigateToPage(
-              currentPage < items.length - 1 ? currentPage + 1 : currentPage),
-          onContinue: () => _navigateToPage(
-              currentPage < items.length - 1 ? currentPage + 1 : currentPage),
+          onSkip: () => context.pushReplacementNamed(Routes.userPreferences),
+          onContinue: () {
+            if (currentPage < items.length - 1) {
+              _navigateToPage(currentPage + 1);
+            } else {
+              context.pushReplacementNamed(Routes.userPreferences);
+            }
+          },
         ),
         Positioned(
           bottom: 60,
@@ -94,8 +100,3 @@ class _OnboardingBodyState extends State<OnboardingBody> {
     );
   }
 }
-
-
-
-
-// Reusable Widget for Page Indicator

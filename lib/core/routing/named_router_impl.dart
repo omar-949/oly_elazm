@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/user_preferences.dart';
 
 import 'named_router.dart';
 
@@ -13,6 +14,10 @@ class AppRouter {
       case Routes.onboardingScreen:
         return MaterialPageRoute(
           builder: (_) => const OnboardingView(),
+        );
+      case Routes.userPreferences:
+        return MaterialPageRoute(
+          builder: (_) => const UserPreferences(),
         );
       // case Routes.dashboard:
       //   return MaterialPageRoute(

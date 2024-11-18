@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:oly_elazm/core/routing/named_router_impl.dart';
 
-import 'package:oly_elazm/main.dart';
 import 'package:oly_elazm/oly_elazm.dart';
 
 void main() {

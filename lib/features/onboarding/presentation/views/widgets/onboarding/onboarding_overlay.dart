@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/features/onboarding/data/models/onboarding_item.dart';
-import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding_action_button.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/widgets/onboarding/onboarding_action_button.dart';
 
 class OnboardingOverlay extends StatelessWidget {
   final int currentPage;
