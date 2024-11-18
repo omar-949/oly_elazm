@@ -35,13 +35,11 @@ class OnboardingOverlay extends StatelessWidget {
           20.verticalSpace,
           Text(
             item.title,
-            textDirection: TextDirection.rtl,
             style: AppTextStyle.font32SemiBold(),
           ),
           16.verticalSpace,
           Text(
             item.description,
-            textDirection: TextDirection.rtl,
             textAlign: TextAlign.center,
             style: AppTextStyle.font24Regular(),
           ),

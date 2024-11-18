@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
@@ -17,6 +18,9 @@ class OlyElazm extends StatelessWidget {
       builder: (context, child) => GestureDetector(
         onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
         child: MaterialApp(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           themeAnimationDuration: const Duration(milliseconds: 700),
           themeAnimationCurve: Curves.easeInOutCubic,
           initialRoute: Routes.onboardingScreen,

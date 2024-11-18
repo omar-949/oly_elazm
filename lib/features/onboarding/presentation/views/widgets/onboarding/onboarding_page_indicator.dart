@@ -14,7 +14,6 @@ class OnboardingPageIndicator extends StatelessWidget {
     return AnimatedSmoothIndicator(
       activeIndex: currentPage,
       count: itemCount,
-      textDirection: TextDirection.rtl,
       effect: ExpandingDotsEffect(
         activeDotColor: AppColors.mainAppColor,
         dotColor: Colors.white,

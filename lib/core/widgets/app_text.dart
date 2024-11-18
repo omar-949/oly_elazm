@@ -29,7 +29,6 @@ class AppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textDirection: TextDirection.rtl,
       textAlign: textAlign ?? TextAlign.start,
       maxLines: maxLines,
       overflow: textOverflow,

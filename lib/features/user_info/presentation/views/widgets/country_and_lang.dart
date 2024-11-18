@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oly_elazm/features/onboarding/data/models/drop_down_item.dart';
-import 'package:oly_elazm/features/onboarding/presentation/views/widgets/user_preferences/custom_drop_down.dart';
+import 'package:oly_elazm/features/user_info/data/model/drop_down_item.dart';
+import 'package:oly_elazm/features/user_info/presentation/views/widgets/custom_drop_down.dart';
 
 class CountryAndLang extends StatelessWidget {
   const CountryAndLang({
@@ -17,21 +17,21 @@ class CountryAndLang extends StatelessWidget {
             children: [
               CustomDropDown(
                 title: 'البلد',
-                titleImage: 'assets/images/egypt.png',
+                headerImage: 'assets/images/egypt.png',
                 items: DropDownItem.countries,
                 onItemSelected: (DropDownItem value) {},
               ),
               10.verticalSpace,
               CustomDropDown(
                 title: 'اللغه',
-                titleImage: 'assets/images/language.png',
+                headerImage: 'assets/images/language.png',
                 items: const [],
                 onItemSelected: (DropDownItem value) {},
               ),
               10.verticalSpace,
               CustomDropDown(
                 title: 'المهنة',
-                titleImage: 'assets/images/Careers.png',
+                headerImage: 'assets/images/Careers.png',
                 items: const [],
                 onItemSelected: (DropDownItem value) {},
               ),

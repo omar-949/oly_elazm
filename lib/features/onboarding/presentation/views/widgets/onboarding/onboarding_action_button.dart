@@ -22,22 +22,6 @@ class OnboardingActionButtons extends StatelessWidget {
       children: [
         Expanded(
           child: AppButton(
-            title: 'تخطي',
-            background: Colors.transparent,
-            height: 43.h,
-            width: 156.w,
-            elevation: 0,
-            radius: 30.r,
-            textColor: AppColors.grey,
-            borderColor: AppColors.grey,
-            fontSize: 20.sp,
-            fontWeight: FontWeightHelper.regular,
-            onTap: onSkip,
-          ),
-        ),
-        10.horizontalSpace,
-        Expanded(
-          child: AppButton(
             title: 'متابعة',
             background: Colors.white,
             height: 43.h,
@@ -49,6 +33,22 @@ class OnboardingActionButtons extends StatelessWidget {
             fontSize: 20.sp,
             fontWeight: FontWeightHelper.regular,
             onTap: onContinue,
+          ),
+        ),
+        10.horizontalSpace,
+        Expanded(
+          child: AppButton(
+            title: 'تخطي',
+            background: Colors.transparent,
+            height: 43.h,
+            width: 156.w,
+            elevation: 0,
+            radius: 30.r,
+            textColor: AppColors.grey,
+            borderColor: AppColors.grey,
+            fontSize: 20.sp,
+            fontWeight: FontWeightHelper.regular,
+            onTap: onSkip,
           ),
         ),
       ],

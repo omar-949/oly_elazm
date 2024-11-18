@@ -75,7 +75,6 @@ class _OnboardingBodyState extends State<OnboardingBody> {
               item: item,
             );
           },
-          reverse: true,
         ),
         OnboardingOverlay(
           currentPage: currentPage,
