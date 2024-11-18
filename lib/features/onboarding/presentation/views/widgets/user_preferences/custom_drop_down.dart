@@ -9,11 +9,13 @@ class CustomDropDown extends StatefulWidget {
       {super.key,
       required this.items,
       required this.title,
-      required this.titleImage});
+      required this.titleImage,
+      required this.onItemSelected});
 
   final String title;
   final String titleImage;
   final List<DropDownItem> items;
+  final ValueChanged<DropDownItem> onItemSelected;
 
   @override
   State<CustomDropDown> createState() => _CustomDropDownState();
@@ -60,6 +62,7 @@ class _CustomDropDownState extends State<CustomDropDown> {
                       selectedItem = item;
                       isOpen = false;
                     });
+                    widget.onItemSelected(item);
                   },
                 ),
               ],
@@ -142,7 +145,9 @@ class DropdownItems extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
-      height: isOpen ? items.length * 44 : 0,
+      height: isOpen
+          ? (items.isNotEmpty ? items.length * 44 : 50)
+          : 0,
       curve: Curves.easeInOut,
       child: ListView.builder(
         shrinkWrap: true,
