@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/font_weight_helper.dart';
 
 class AppTextStyle {
   static TextStyle style({
@@ -14,4 +16,16 @@ class AppTextStyle {
       decoration: decoration,
     );
   }
+
+  static TextStyle font32SemiBold({Color? color = Colors.white}) => TextStyle(
+        fontSize: 32.sp,
+        color: color,
+        fontWeight: FontWeightHelper.semiBold,
+      );
+
+  static TextStyle font24Regular({Color? color = Colors.white}) => TextStyle(
+        fontSize: 24.sp,
+        color: color,
+        fontWeight: FontWeightHelper.regular,
+      );
 }

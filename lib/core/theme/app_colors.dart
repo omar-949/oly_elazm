@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static Color get mainAppColor => const Color(0xFF18a854);
+  static Color get mainAppColor => const Color(0xFFA85000);
+  static Color get grey => const Color(0xFF777777);
 
   static Color get textFieldColor => const Color(0xFFf5f5f5);
 

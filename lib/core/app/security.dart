@@ -13,19 +13,20 @@ class SecurityApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        builder: (context, child) => GestureDetector(
-              onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-              child: MaterialApp(
-                themeAnimationDuration: const Duration(milliseconds: 700),
-                themeAnimationCurve: Curves.easeInOutCubic,
-                initialRoute: Routes.dashboard,
-                onGenerateRoute: appRouter.generateRoute,
-                debugShowCheckedModeBanner: false,
-                title: 'Security',
-                theme: AppTheme.lightThemeData,
-              ),
-            ));
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      builder: (context, child) => GestureDetector(
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: MaterialApp(
+          themeAnimationDuration: const Duration(milliseconds: 700),
+          themeAnimationCurve: Curves.easeInOutCubic,
+          initialRoute: Routes.dashboard,
+          onGenerateRoute: appRouter.generateRoute,
+          debugShowCheckedModeBanner: false,
+          title: 'Security',
+          theme: AppTheme.lightThemeData,
+        ),
+      ),
+    );
   }
 }

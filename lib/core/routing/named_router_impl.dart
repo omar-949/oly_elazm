@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 
-
-import '../di/dependency_injection.dart';
 import 'named_router.dart';
 
 class AppRouter {
@@ -11,6 +9,10 @@ class AppRouter {
       case Routes.splashScreen:
         return MaterialPageRoute(
           builder: (_) => const SizedBox.shrink(),
+        );
+      case Routes.onboardingScreen:
+        return MaterialPageRoute(
+          builder: (_) => const OnboardingView(),
         );
       // case Routes.dashboard:
       //   return MaterialPageRoute(
