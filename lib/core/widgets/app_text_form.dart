@@ -142,7 +142,7 @@ class AppTextField extends StatelessWidget {
       validator: validate,
       onFieldSubmitted: onFieldSubmitted,
       onChanged: onChanged,
-      maxLines: maxLine,
+      maxLines: isPassword == true ? 1 : maxLine,
       inputFormatters: inputFormatters,
     );
   }

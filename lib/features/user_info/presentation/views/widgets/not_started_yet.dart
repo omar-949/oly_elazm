@@ -44,7 +44,7 @@ class _NotStartedCheckboxState extends State<NotStartedCheckbox> {
           side: const BorderSide(
             color: Color(0xff777777),
           ),
-          activeColor: AppColors.mainAppColor,
+          activeColor: AppColors.secondaryAppColor,
           splashRadius: 0,
         ),
         Text(

@@ -79,12 +79,12 @@ class _OnboardingBodyState extends State<OnboardingBody> {
         OnboardingOverlay(
           currentPage: currentPage,
           items: items,
-          onSkip: () => context.pushReplacementNamed(Routes.userPreferences),
+          onSkip: () => context.pushReplacementNamed(Routes.userInfo),
           onContinue: () {
             if (currentPage < items.length - 1) {
               _navigateToPage(currentPage + 1);
             } else {
-              context.pushReplacementNamed(Routes.userPreferences);
+              context.pushReplacementNamed(Routes.userInfo);
             }
           },
         ),

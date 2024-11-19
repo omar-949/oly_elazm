@@ -20,7 +20,7 @@ class PercentBar extends StatelessWidget {
       alignment: MainAxisAlignment.end,
       animateFromLastPercent: true,
       isRTL: true,
-      progressColor: AppColors.mainAppColor,
+      progressColor: AppColors.secondaryAppColor,
       backgroundColor: const Color(0xffD9D9D9),
       barRadius: Radius.circular(12.r),
     );

@@ -24,9 +24,9 @@ class UserInfoItem extends StatelessWidget {
           width: 130.w,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: isSelected ? AppColors.mainAppColor : Colors.transparent,
+            color: isSelected ? AppColors.secondaryAppColor : Colors.transparent,
             border: Border.all(
-              color: isSelected ? AppColors.mainAppColor : Colors.transparent,
+              color: isSelected ? AppColors.secondaryAppColor : Colors.transparent,
               width: 3.0, // Adjust border width
             ),
           ),

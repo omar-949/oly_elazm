@@ -16,7 +16,7 @@ class ChaptersBox extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
         color: Colors.white,
-        border: Border.all(color: AppColors.mainAppColor),
+        border: Border.all(color: AppColors.secondaryAppColor),
       ),
       child: const ChaptersListVIewBuilder(),
     );

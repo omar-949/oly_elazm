@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oly_elazm/features/auth/presentation/views/login_sign_up_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/user_info.dart';
@@ -16,9 +17,13 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const OnboardingView(),
         );
-      case Routes.userPreferences:
+      case Routes.userInfo:
         return MaterialPageRoute(
           builder: (_) => const UserPreferences(),
+        );
+      case Routes.loginSignUpScreen:
+        return MaterialPageRoute(
+          builder: (_) => const LoginSignUpView(),
         );
       default:
         return MaterialPageRoute(

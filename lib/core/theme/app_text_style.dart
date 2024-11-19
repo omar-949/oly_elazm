@@ -23,8 +23,20 @@ class AppTextStyle {
         fontWeight: FontWeightHelper.semiBold,
       );
 
+  static TextStyle font32Bold({Color? color = Colors.black}) => TextStyle(
+        fontSize: 32.sp,
+        color: color,
+        fontWeight: FontWeightHelper.bold,
+      );
+
   static TextStyle font18SemiBold({Color? color = Colors.black}) => TextStyle(
         fontSize: 18.sp,
+        color: color,
+        fontWeight: FontWeightHelper.semiBold,
+      );
+
+  static TextStyle font16SemiBold({Color? color = Colors.black}) => TextStyle(
+        fontSize: 16.sp,
         color: color,
         fontWeight: FontWeightHelper.semiBold,
       );
@@ -35,8 +47,20 @@ class AppTextStyle {
         fontWeight: FontWeightHelper.medium,
       );
 
+  static TextStyle font18Medium({Color? color = Colors.black}) => TextStyle(
+        fontSize: 18.sp,
+        color: color,
+        fontWeight: FontWeightHelper.medium,
+      );
+
   static TextStyle font16Regular({Color? color = Colors.black}) => TextStyle(
         fontSize: 16.sp,
+        color: color,
+        fontWeight: FontWeightHelper.regular,
+      );
+
+  static TextStyle font14Regular({Color? color = Colors.black}) => TextStyle(
+        fontSize: 14.sp,
         color: color,
         fontWeight: FontWeightHelper.regular,
       );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppColors {
   static Color get mainAppColor => const Color(0xFF522700);
+  static Color get secondaryAppColor => const Color(0xffA85000);
   static Color get grey => const Color(0xFF777777);
 
   static Color get textFieldColor => const Color(0xFFf5f5f5);
@@ -15,4 +16,5 @@ class AppColors {
   static Color get errorColor => const Color(0xFFBA0000);
 
   static Color get successColor => const Color(0xff116530);
+  static Color get offWhite => const Color(0xffEDEEEF);
 }
