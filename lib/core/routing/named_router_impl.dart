@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
+import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/user_info.dart';
 
 import 'named_router.dart';
@@ -9,7 +10,7 @@ class AppRouter {
     switch (settings.name) {
       case Routes.splashScreen:
         return MaterialPageRoute(
-          builder: (_) => const SizedBox.shrink(),
+          builder: (_) => const SplashView(),
         );
       case Routes.onboardingScreen:
         return MaterialPageRoute(
