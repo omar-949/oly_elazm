@@ -9,23 +9,29 @@ class LoginSignUpBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        const LoginSignUpHeader(),
-        20.verticalSpace,
-        const Expanded(
-          child: DefaultTabController(
-            length: 2,
-            child: Column(
-              children: [
-                LoginSignUpTabBar(),
-                LoginSignUpTabBarView(),
-              ],
+    return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const LoginSignUpHeader(),
+          20.verticalSpace,
+          SizedBox(
+            height: 750.h,
+            child: const DefaultTabController(
+              length: 2,
+              child: Column(
+                children: [
+                  LoginSignUpTabBar(),
+                  Expanded(
+                    child: LoginSignUpTabBarView(),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/validations.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/login_sign_up/license_check_box.dart';
@@ -16,6 +17,8 @@ class _SignUpFormState extends State<SignUpForm> {
   late final TextEditingController emailController;
   late final TextEditingController phoneNumberController;
   late final TextEditingController passwordController;
+  final formKey = GlobalKey<FormState>();
+  AutovalidateMode autoValidateMode = AutovalidateMode.disabled;
 
   @override
   void initState() {
@@ -35,38 +38,56 @@ class _SignUpFormState extends State<SignUpForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        24.verticalSpace,
-        AuthTextField(
-          title: 'البريد الالكتروني',
-          hint: 'ادخل بريدك الالكتروني',
-          controller: emailController,
-          type: TextInputType.emailAddress,
-        ),
-        24.verticalSpace,
-        AuthTextField(
-          title: 'رقم الهاتف',
-          hint: 'ادخل رقم الهاتف',
-          controller: emailController,
-          type: TextInputType.number,
-        ),
-        24.verticalSpace,
-        AuthTextField(
-          title: 'كلمة المرور',
-          hint: 'ادخل كلمة المرور',
-          controller: passwordController,
-          isPassword: true,
-        ),
-        8.verticalSpace,
-        const LicenseCheckBox(),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 32.h),
-          child: CustomAppButton(onTap: () {}, title: 'تسجيل الدخول'),
-        ),
-        const SocialButtons(),
-      ],
+    return Form(
+      key: formKey,
+      autovalidateMode: autoValidateMode,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          24.verticalSpace,
+          AuthTextField(
+            title: 'البريد الالكتروني',
+            hint: 'ادخل بريدك الالكتروني',
+            controller: emailController,
+            type: TextInputType.emailAddress,
+            validator: Validations.emailValidator,
+          ),
+          16.verticalSpace,
+          AuthTextField(
+            title: 'رقم الهاتف',
+            hint: 'ادخل رقم الهاتف',
+            controller: phoneNumberController,
+            type: TextInputType.number,
+            validator: Validations.phoneNumberValidator,
+            autoValidateMode: autoValidateMode,
+          ),
+          16.verticalSpace,
+          AuthTextField(
+            title: 'كلمة المرور',
+            hint: 'ادخل كلمة المرور',
+            controller: passwordController,
+            isPassword: true,
+            validator: Validations.passwordValidator,
+            autoValidateMode: autoValidateMode,
+          ),
+          8.verticalSpace,
+          const LicenseCheckBox(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 32.h),
+            child: CustomAppButton(
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                  } else {
+                    setState(() {
+                      autoValidateMode = AutovalidateMode.always;
+                    });
+                  }
+                },
+                title: 'تسجيل الدخول'),
+          ),
+          const SocialButtons(),
+        ],
+      ),
     );
   }
 }

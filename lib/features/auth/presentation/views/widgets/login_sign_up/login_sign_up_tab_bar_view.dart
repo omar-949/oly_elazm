@@ -9,14 +9,12 @@ class LoginSignUpTabBarView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Expanded(
-      child: TabBarView(
-        physics: NeverScrollableScrollPhysics(),
-        children: [
-          LoginForm(),
-          SignUpForm(),
-        ],
-      ),
+    return const TabBarView(
+      physics: NeverScrollableScrollPhysics(),
+      children: [
+        LoginForm(),
+        SignUpForm(),
+      ],
     );
   }
 }
