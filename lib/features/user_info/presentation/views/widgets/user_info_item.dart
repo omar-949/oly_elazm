@@ -40,7 +40,7 @@ class UserInfoItem extends StatelessWidget {
         Text(
           info,
           style: AppTextStyle.font16Medium(
-            color: Colors.black.withOpacity(0.6),
+            color: const Color(0xff5F5F5F),
           ),
         ),
       ],

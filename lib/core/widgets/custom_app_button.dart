@@ -32,7 +32,7 @@ class CustomAppButton extends StatelessWidget {
         child: Center(
           child: Text(
             title,
-            style: AppTextStyle.font18SemiBold(),
+            style: AppTextStyle.font18SemiBold(color: Colors.white),
           ),
         ),
       ),

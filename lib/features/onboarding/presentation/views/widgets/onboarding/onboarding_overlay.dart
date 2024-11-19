@@ -35,13 +35,13 @@ class OnboardingOverlay extends StatelessWidget {
           20.verticalSpace,
           Text(
             item.title,
-            style: AppTextStyle.font32SemiBold(),
+            style: AppTextStyle.font32SemiBold(color: Colors.white),
           ),
           16.verticalSpace,
           Text(
             item.description,
             textAlign: TextAlign.center,
-            style: AppTextStyle.font24Regular(),
+            style: AppTextStyle.font24Regular(color: Colors.white),
           ),
           30.verticalSpace,
           OnboardingActionButtons(

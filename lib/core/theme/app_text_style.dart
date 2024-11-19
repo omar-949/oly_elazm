@@ -17,25 +17,37 @@ class AppTextStyle {
     );
   }
 
-  static TextStyle font32SemiBold({Color? color = Colors.white}) => TextStyle(
+  static TextStyle font32SemiBold({Color? color = Colors.black}) => TextStyle(
         fontSize: 32.sp,
         color: color,
         fontWeight: FontWeightHelper.semiBold,
       );
 
-  static TextStyle font18SemiBold({Color? color = Colors.white}) => TextStyle(
+  static TextStyle font18SemiBold({Color? color = Colors.black}) => TextStyle(
         fontSize: 18.sp,
         color: color,
         fontWeight: FontWeightHelper.semiBold,
       );
 
-  static TextStyle font16Medium({Color? color = Colors.white}) => TextStyle(
+  static TextStyle font16Medium({Color? color = Colors.black}) => TextStyle(
         fontSize: 16.sp,
         color: color,
         fontWeight: FontWeightHelper.medium,
       );
 
-  static TextStyle font24Regular({Color? color = Colors.white}) => TextStyle(
+  static TextStyle font16Regular({Color? color = Colors.black}) => TextStyle(
+        fontSize: 16.sp,
+        color: color,
+        fontWeight: FontWeightHelper.regular,
+      );
+
+  static TextStyle font20Regular({Color? color = Colors.black}) => TextStyle(
+        fontSize: 20.sp,
+        color: color,
+        fontWeight: FontWeightHelper.regular,
+      );
+
+  static TextStyle font24Regular({Color? color = Colors.black}) => TextStyle(
         fontSize: 24.sp,
         color: color,
         fontWeight: FontWeightHelper.regular,
