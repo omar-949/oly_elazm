@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/user_info_item.dart';
 
-class PickGender extends StatelessWidget {
-  final bool? isMale;
+class PickRole extends StatelessWidget {
+  final bool? isStudent;
   final Function(bool) onSelectionChanged;
 
-  const PickGender({
+  const PickRole({
     super.key,
-    required this.isMale,
+    required this.isStudent,
     required this.onSelectionChanged,
   });
 
@@ -29,8 +29,8 @@ class PickGender extends StatelessWidget {
           },
           child: UserInfoItem(
             image: 'assets/images/male.png',
-            info: 'ذكر',
-            isSelected: isMale == true,
+            info: 'طالب',
+            isSelected: isStudent == true,
           ),
         ),
         64.verticalSpace,
@@ -40,8 +40,8 @@ class PickGender extends StatelessWidget {
           },
           child: UserInfoItem(
             image: 'assets/images/female.png',
-            info: 'انثي',
-            isSelected: isMale == false,
+            info: 'محفظ',
+            isSelected: isStudent == false,
           ),
         ),
       ],

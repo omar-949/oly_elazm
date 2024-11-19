@@ -10,34 +10,30 @@ class CountryAndLang extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              CustomDropDown(
-                title: 'البلد',
-                headerImage: 'assets/images/egypt.png',
-                items: DropDownItem.countries,
-                onItemSelected: (DropDownItem value) {},
-              ),
-              10.verticalSpace,
-              CustomDropDown(
-                title: 'اللغه',
-                headerImage: 'assets/images/language.png',
-                items: const [],
-                onItemSelected: (DropDownItem value) {},
-              ),
-              10.verticalSpace,
-              CustomDropDown(
-                title: 'المهنة',
-                headerImage: 'assets/images/Careers.png',
-                items: const [],
-                onItemSelected: (DropDownItem value) {},
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          CustomDropDown(
+            title: 'البلد',
+            headerImage: 'assets/images/egypt.png',
+            items: DropDownItem.countries,
+            onItemSelected: (DropDownItem value) {},
           ),
-        ),
+          10.verticalSpace,
+          CustomDropDown(
+            title: 'اللغه',
+            headerImage: 'assets/images/language.png',
+            items: const [],
+            onItemSelected: (DropDownItem value) {},
+          ),
+          10.verticalSpace,
+          CustomDropDown(
+            title: 'المهنة',
+            headerImage: 'assets/images/Careers.png',
+            items: const [],
+            onItemSelected: (DropDownItem value) {},
+          ),
+        ],
       ),
     );
   }
