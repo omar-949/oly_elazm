@@ -5,7 +5,7 @@ part 'user_info_state.dart';
 
 class UserInfoCubit extends Cubit<UserInfoState> {
   UserInfoCubit() : super(UserInfoUpdated(isStudent: null, isMale: null, percent: 0.0, currentIndex: 0));
-
+  // النضافة حلوة برضوا
   // Update role (Student or not)
   void updateRole(bool value) {
     final currentState = state;
@@ -43,8 +43,7 @@ class UserInfoCubit extends Cubit<UserInfoState> {
   }
 
   // Calculate percent based on role (student) and gender (male)
-  double percentCalculator(
-      bool? isStudent, bool? isMale, String? selectedChapter) {
+  double percentCalculator(bool? isStudent, bool? isMale, String? selectedChapter) {
     if (isStudent == null) return 0.0; // Initial state when isStudent is null
     if (isMale == null) {
       return isStudent
