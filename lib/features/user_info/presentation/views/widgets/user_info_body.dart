@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/country_and_lang.dart';
@@ -53,7 +55,7 @@ class _UserInfoBodyState extends State<UserInfoBody> {
         isMale: isMale,
         onSelectionChanged: updateGender,
       ),
-      if(isStudent == true)const Chapters(),
+      if (isStudent == true) const Chapters(),
     ];
 
     return SafeArea(
@@ -79,7 +81,7 @@ class _UserInfoBodyState extends State<UserInfoBody> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 50.h),
+            padding: EdgeInsets.only(bottom: 50.h,right: 16.w,left: 16.w),
             child: CustomAppButton(
               onTap: () {
                 if (currentIndex < widgets.length - 1) {
@@ -87,9 +89,11 @@ class _UserInfoBodyState extends State<UserInfoBody> {
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
                   );
+                }else if(percent == 1.0){
+                  context.pushNamed(Routes.loginSignUpScreen);
                 }
               },
-              title: currentIndex < widgets.length - 1 ? 'التالي' : 'تم',
+              title: percent == 1.0 ? 'تم' : 'التالي',
             ),
           ),
         ],

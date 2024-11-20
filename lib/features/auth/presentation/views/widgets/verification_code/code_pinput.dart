@@ -7,11 +7,12 @@ import 'package:pinput/pinput.dart';
 class CodePinPut extends StatelessWidget {
   const CodePinPut({
     super.key,
-    required this.otpController,
+    required this.otpController, this.validator
+
   });
 
   final TextEditingController otpController;
-
+  final FormFieldValidator<String>? validator;
   @override
   Widget build(BuildContext context) {
     final defaultPinTheme = PinTheme(
@@ -48,15 +49,7 @@ class CodePinPut extends StatelessWidget {
       errorPinTheme: errorPinTheme,
       errorTextStyle: AppTextStyle.font14Regular(color: AppColors.errorColor),
       pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-      validator: (value) {
-        if (value!.isEmpty) {
-          return "الرجاء إدخال رمز التحقق (OTP)!";
-        } else if (value.length < 6) {
-          return "يجب أن يتكون رمز التحقق من 6 أرقام على الأقل!";
-        } else {
-          return null;
-        }
-      },
+      validator: validator,
     );
   }
 }

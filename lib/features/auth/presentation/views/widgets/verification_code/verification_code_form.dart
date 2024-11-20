@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/verification_code/code_pinput.dart';
 
@@ -36,9 +38,27 @@ class _VerificationCodeFormState extends State<VerificationCodeForm> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(vertical: 36.h),
-              child: CodePinPut(otpController: otpController),
+              child: CodePinPut(
+                otpController: otpController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "الرجاء إدخال رمز التحقق (OTP)!";
+                  } else if (value.length < 6) {
+                    return "يجب أن يتكون رمز التحقق من 6 أرقام على الأقل!";
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
-            CustomAppButton(onTap: () {}, title: 'تحقق'),
+            CustomAppButton(
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                  context.pushNamed(Routes.resetPasswordScreen);
+                }
+              },
+              title: 'تحقق',
+            ),
           ],
         ),
       ),

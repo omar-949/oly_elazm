@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 
@@ -52,6 +54,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
                 onTap: () {
                   FocusManager.instance.primaryFocus?.unfocus();
                   if (formKey.currentState!.validate()) {
+                    context.pushNamed(Routes.verificationCodeScreen);
                   } else if (autoValidateMode != AutovalidateMode.always) {
                     autoValidateMode = AutovalidateMode.always;
                     setState(() {});
