@@ -60,6 +60,7 @@ class _UserInfoBodyState extends State<UserInfoBody> {
 
     return SafeArea(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           if (currentIndex >= 1)
             Padding(

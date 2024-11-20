@@ -9,19 +9,21 @@ class Chapters extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          'عند اي جزء توقفت..؟',
-          style: AppTextStyle.font18SemiBold(color: Colors.black),
-        ),
-        20.verticalSpace,
-        const ChaptersBox(),
-        NotStartedCheckbox(
-          initialValue: false,
-          onChanged: (value) {},
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Text(
+            'عند اي جزء توقفت..؟',
+            style: AppTextStyle.font18SemiBold(color: Colors.black),
+          ),
+          20.verticalSpace,
+          const ChaptersBox(),
+          NotStartedCheckbox(
+            initialValue: false,
+            onChanged: (value) {},
+          )
+        ],
+      ),
     );
   }
 }

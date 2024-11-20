@@ -15,7 +15,7 @@ class OnboardingPageIndicator extends StatelessWidget {
       activeIndex: currentPage,
       count: itemCount,
       effect: ExpandingDotsEffect(
-        activeDotColor: AppColors.mainAppColor,
+        activeDotColor: AppColors.secondaryAppColor,
         dotColor: Colors.white,
         dotHeight: 12,
         dotWidth: 16,

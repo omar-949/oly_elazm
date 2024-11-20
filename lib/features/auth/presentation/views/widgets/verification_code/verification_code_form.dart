@@ -41,7 +41,7 @@ class _VerificationCodeFormState extends State<VerificationCodeForm> {
               child: CodePinPut(
                 otpController: otpController,
                 validator: (value) {
-                  if (value!.isEmpty) {
+                  if (value == null) {
                     return "الرجاء إدخال رمز التحقق (OTP)!";
                   } else if (value.length < 6) {
                     return "يجب أن يتكون رمز التحقق من 6 أرقام على الأقل!";
