@@ -77,6 +77,7 @@ class _LoginFormState extends State<LoginForm> {
             padding: EdgeInsets.symmetric(vertical: 32.h),
             child: CustomAppButton(
               onTap: () {
+                FocusManager.instance.primaryFocus?.unfocus();
                 if (formKey.currentState!.validate()) {
                 } else if (autoValidateMode != AutovalidateMode.always) {
                   autoValidateMode = AutovalidateMode.always;

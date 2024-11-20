@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/features/auth/presentation/views/forget_password_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/login_sign_up_view.dart';
+import 'package:oly_elazm/features/auth/presentation/views/reset_password_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/verification_code_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
@@ -34,6 +35,10 @@ class AppRouter {
       case Routes.verificationCodeScreen:
         return MaterialPageRoute(
           builder: (_) => const VerificationCodeView(),
+        );
+      case Routes.resetPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ResetPasswordView(),
         );
       default:
         return MaterialPageRoute(
