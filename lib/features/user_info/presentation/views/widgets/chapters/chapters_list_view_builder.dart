@@ -46,8 +46,8 @@ class ChaptersListVIewBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UserInfoCubit, UserInfoState>(
       builder: (context, state) {
-        String? selectedChapter =
-            (state is UserInfoUpdated) ? state.selectedChapter : null;
+        String? selectedChapter = (state is UserInfoUpdated) ? state.selectedChapter : null;
+        bool notStarted = (state is UserInfoUpdated) ? state.notStarted : false;
         return ListView.builder(
           itemCount: partsOfQuran.length,
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -59,7 +59,9 @@ class ChaptersListVIewBuilder extends StatelessWidget {
               text: partsOfQuran[index],
               isSelected: isSelected,
               onTap: () {
-                context.read<UserInfoCubit>().selectChapter(chapter);
+                !notStarted
+                    ? context.read<UserInfoCubit>().selectChapter(chapter)
+                    : null;
               },
             );
           },

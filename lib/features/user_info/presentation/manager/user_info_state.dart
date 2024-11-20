@@ -11,6 +11,7 @@ class UserInfoUpdated extends UserInfoState {
   final double percent;
   final int currentIndex;
   final String? selectedChapter;
+  final bool notStarted;
 
   UserInfoUpdated({
     this.isStudent,
@@ -18,6 +19,7 @@ class UserInfoUpdated extends UserInfoState {
     required this.percent,
     this.currentIndex = 0,
     this.selectedChapter,
+    this.notStarted = false,
   });
 
   UserInfoUpdated copyWith({
@@ -26,6 +28,7 @@ class UserInfoUpdated extends UserInfoState {
     double? percent,
     int? currentIndex,
     String? selectedChapter,
+    bool? notStarted,
   }) {
     return UserInfoUpdated(
       isStudent: isStudent ?? this.isStudent,
@@ -33,6 +36,7 @@ class UserInfoUpdated extends UserInfoState {
       percent: percent ?? this.percent,
       currentIndex: currentIndex ?? this.currentIndex,
       selectedChapter: selectedChapter ?? this.selectedChapter,
+      notStarted: notStarted ?? this.notStarted,
     );
   }
 }
