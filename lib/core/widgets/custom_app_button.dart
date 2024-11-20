@@ -18,7 +18,6 @@ class CustomAppButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 46.h,
-        margin: EdgeInsets.symmetric(horizontal: 16.w),
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             colors: [

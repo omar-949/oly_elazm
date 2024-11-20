@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/theme/app_colors.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
@@ -61,20 +63,24 @@ class _LoginFormState extends State<LoginForm> {
             autoValidateMode: autoValidateMode,
           ),
           6.verticalSpace,
-          Text(
-            'نسيت كلمة المرور؟',
-            style:
-                AppTextStyle.font16Regular(color: AppColors.secondaryAppColor),
+          GestureDetector(
+            onTap: (){
+              context.pushNamed(Routes.forgetPasswordScreen);
+            },
+            child: Text(
+              'نسيت كلمة المرور؟',
+              style:
+                  AppTextStyle.font16Regular(color: AppColors.secondaryAppColor),
+            ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 32.h),
             child: CustomAppButton(
               onTap: () {
                 if (formKey.currentState!.validate()) {
-                } else {
-                  setState(() {
-                    autoValidateMode = AutovalidateMode.always;
-                  });
+                } else if (autoValidateMode != AutovalidateMode.always) {
+                  autoValidateMode = AutovalidateMode.always;
+                  setState(() {});
                 }
               },
               title: 'تسجيل الدخول',

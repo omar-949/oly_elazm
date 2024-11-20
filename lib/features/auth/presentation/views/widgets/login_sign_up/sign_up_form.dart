@@ -75,15 +75,15 @@ class _SignUpFormState extends State<SignUpForm> {
           Padding(
             padding: EdgeInsets.symmetric(vertical: 32.h),
             child: CustomAppButton(
-                onTap: () {
-                  if (formKey.currentState!.validate()) {
-                  } else {
-                    setState(() {
-                      autoValidateMode = AutovalidateMode.always;
-                    });
-                  }
-                },
-                title: 'تسجيل الدخول'),
+              onTap: () {
+                if (formKey.currentState!.validate()) {
+                } else if (autoValidateMode != AutovalidateMode.always) {
+                  autoValidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
+              },
+              title: 'تسجيل الدخول',
+            ),
           ),
           const SocialButtons(),
         ],

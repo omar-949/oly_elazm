@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oly_elazm/features/auth/presentation/views/forget_password_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/login_sign_up_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
@@ -24,6 +25,10 @@ class AppRouter {
       case Routes.loginSignUpScreen:
         return MaterialPageRoute(
           builder: (_) => const LoginSignUpView(),
+        );
+      case Routes.forgetPasswordScreen:
+        return MaterialPageRoute(
+          builder: (_) => const ForgetPasswordView(),
         );
       default:
         return MaterialPageRoute(
