@@ -10,8 +10,17 @@ class UserInfoCubit extends Cubit<UserInfoState> {
   void updateRole(bool value) {
     final currentState = state;
     if (currentState is UserInfoUpdated) {
-      final updatedPercent = percentCalculator(value, currentState.isMale);
-      emit(currentState.copyWith(isStudent: value, percent: updatedPercent));
+      final updatedPercent = percentCalculator(
+        value,
+        currentState.isMale,
+        currentState.selectedChapter,
+      );
+      emit(
+        currentState.copyWith(
+          isStudent: value,
+          percent: updatedPercent,
+        ),
+      );
     }
   }
 
@@ -19,29 +28,59 @@ class UserInfoCubit extends Cubit<UserInfoState> {
   void updateGender(bool value) {
     final currentState = state;
     if (currentState is UserInfoUpdated) {
-      final updatedPercent = percentCalculator(currentState.isStudent, value);
-      emit(currentState.copyWith(isMale: value, percent: updatedPercent));
+      final updatedPercent = percentCalculator(
+        currentState.isStudent,
+        value,
+        currentState.selectedChapter,
+      );
+      emit(
+        currentState.copyWith(
+          isMale: value,
+          percent: updatedPercent,
+        ),
+      );
     }
   }
 
   // Calculate percent based on role (student) and gender (male)
-  double percentCalculator(bool? isStudent, bool? isMale) {
-    if (isStudent == null) return 0.0;  // Initial state when isStudent is null
-    if (isMale == null) return isStudent ? 1 / 3 : 1 / 2;  // Only role selected, gender is still null
-    return isStudent ? 2 / 3 : 1.0;  // Both role and gender are selected
+  double percentCalculator(
+      bool? isStudent, bool? isMale, String? selectedChapter) {
+    if (isStudent == null) return 0.0; // Initial state when isStudent is null
+    if (isMale == null) {
+      return isStudent
+          ? 1 / 3
+          : 1 / 2; // Only role selected, gender is still null
+    }
+    if (selectedChapter != null) return 1.0;
+    return isStudent ? 2 / 3 : 1.0; // Both role and gender are selected
   }
 
   // Update the current index of the PageView
   void updateCurrentIndex(int index) {
     if (state is UserInfoUpdated) {
-      emit((state as UserInfoUpdated).copyWith(currentIndex: index));
+      emit(
+        (state as UserInfoUpdated).copyWith(
+          currentIndex: index,
+        ),
+      );
     }
   }
+
   // Update the selected chapter
   void selectChapter(String chapter) {
     final currentState = state;
     if (currentState is UserInfoUpdated) {
-      emit(currentState.copyWith(selectedChapter: chapter));
+      final updatedPercent = percentCalculator(
+        currentState.isStudent,
+        currentState.isMale,
+        chapter,
+      );
+      emit(
+        currentState.copyWith(
+          selectedChapter: chapter,
+          percent: updatedPercent,
+        ),
+      );
     }
   }
 }
