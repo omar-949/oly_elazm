@@ -1,104 +1,101 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
-import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters.dart';
+import 'package:oly_elazm/features/user_info/data/model/selector_model.dart';
+import 'package:oly_elazm/features/user_info/presentation/manager/user_info_cubit.dart';
+import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters/chapters.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/country_and_lang.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/percent_bar.dart';
-import 'package:oly_elazm/features/user_info/presentation/views/widgets/pick_gender.dart';
-import 'package:oly_elazm/features/user_info/presentation/views/widgets/pick_role.dart';
+import 'package:oly_elazm/features/user_info/presentation/views/widgets/selector.dart';
 
-class UserInfoBody extends StatefulWidget {
+class UserInfoBody extends StatelessWidget {
   const UserInfoBody({super.key});
 
   @override
-  State<UserInfoBody> createState() => _UserInfoBodyState();
-}
-
-class _UserInfoBodyState extends State<UserInfoBody> {
-  final PageController _pageController = PageController();
-  int currentIndex = 0;
-  bool? isStudent;
-  bool? isMale;
-  double percent = 0.0;
-
-  void updateRole(bool value) {
-    setState(() {
-      isStudent = value;
-      percent = percentCalculator();
-    });
-  }
-
-  void updateGender(bool value) {
-    setState(() {
-      isMale = value;
-      percent = percentCalculator();
-    });
-  }
-
-  double percentCalculator() {
-    if (currentIndex == 0) return 0.0;
-    if (currentIndex == 1) return isStudent == true ? 1 / 3 : 1 / 2;
-    return isStudent == true ? 2 / 3 : 1.0;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    List<Widget> widgets = [
-      const CountryAndLang(),
-      PickRole(
-        isStudent: isStudent,
-        onSelectionChanged: updateRole,
-      ),
-      PickGender(
-        isMale: isMale,
-        onSelectionChanged: updateGender,
-      ),
-      if (isStudent == true) const Chapters(),
-    ];
+    return BlocBuilder<UserInfoCubit, UserInfoState>(
+      builder: (context, state) {
+        final PageController pageController = PageController();
 
-    return SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          if (currentIndex >= 1)
-            Padding(
-              padding: EdgeInsets.only(top: 70.h, bottom: 24.h),
-              child: PercentBar(percent: percent),
+        final userInfoState = state is UserInfoUpdated
+            ? state
+            : UserInfoUpdated(isStudent: null, isMale: null, percent: 0.0);
+        List<Widget> widgets = [
+          const CountryAndLang(),
+          Selector(
+            optionModel: SelectionOption(
+              title: 'هل أنت..؟',
+              type: SelectionType.role,
+              option1: 'طالب',
+              option2: 'محفظ',
+              image1: 'assets/images/male.png',
+              image2: 'assets/images/female.png',
             ),
-          Expanded(
-            child: PageView.builder(
-              controller: _pageController,
-              itemCount: widgets.length,
-              onPageChanged: (index) {
-                setState(() {
-                  currentIndex = index;
-                });
-              },
-              itemBuilder: (context, index) {
-                return widgets[index];
-              },
-            ),
+            onSelectionChanged: (value) {
+              context.read<UserInfoCubit>().updateRole(value);
+            },
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 50.h,right: 16.w,left: 16.w),
-            child: CustomAppButton(
-              onTap: () {
-                if (currentIndex < widgets.length - 1) {
-                  _pageController.nextPage(
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeInOut,
-                  );
-                }else if(percent == 1.0){
-                  context.pushNamed(Routes.loginSignUpScreen);
-                }
-              },
-              title: percent == 1.0 ? 'تم' : 'التالي',
+          Selector(
+            optionModel: SelectionOption(
+              title: 'اختر نوعك',
+              type: SelectionType.gender,
+              option1: 'ذكر',
+              option2: 'انثي',
+              image1: 'assets/images/male.png',
+              image2: 'assets/images/female.png',
             ),
+            onSelectionChanged: (value) {
+              context.read<UserInfoCubit>().updateGender(value);
+            },
           ),
-        ],
-      ),
+          if (userInfoState.isStudent == true) const Chapters(),
+        ];
+
+        return SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              if (userInfoState.currentIndex >= 1)
+                Padding(
+                  padding: EdgeInsets.only(top: 70.h, bottom: 24.h),
+                  child: PercentBar(percent: userInfoState.percent),
+                ),
+              Expanded(
+                child: PageView.builder(
+                  controller: pageController,
+                  itemCount: widgets.length,
+                  onPageChanged: (index) {
+                    context.read<UserInfoCubit>().updateCurrentIndex(index);
+                  },
+                  itemBuilder: (context, index) {
+                    return widgets[index];
+                  },
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(bottom: 50.h, right: 16.w, left: 16.w),
+                child: CustomAppButton(
+                  onTap: () {
+                    if (userInfoState.currentIndex < widgets.length - 1) {
+                      pageController.nextPage(
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    }
+                    if (state is UserInfoUpdated && state.percent == 1.0) {
+                      context.pushNamed(Routes.loginSignUpScreen);
+                    }
+                  },
+                  title: userInfoState.percent == 1.0 ? 'تم' : 'التالي',
+                ),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

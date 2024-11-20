@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/theme/app_colors.dart';
-import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters_list_view_builder.dart';
+import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters/chapters_list_view_builder.dart';
 
 class ChaptersBox extends StatelessWidget {
   const ChaptersBox({

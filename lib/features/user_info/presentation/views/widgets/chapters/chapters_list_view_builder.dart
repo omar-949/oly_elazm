@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters_list_view_item.dart';
+import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters/chapters_list_view_item.dart';
 
 class ChaptersListVIewBuilder extends StatelessWidget {
   const ChaptersListVIewBuilder({
