@@ -10,12 +10,14 @@ class UserInfoUpdated extends UserInfoState {
   final bool? isMale;
   final double percent;
   final int currentIndex;
+  final String? selectedChapter;
 
   UserInfoUpdated({
     this.isStudent,
     this.isMale,
     required this.percent,
     this.currentIndex = 0,
+    this.selectedChapter,
   });
 
   UserInfoUpdated copyWith({
@@ -23,12 +25,14 @@ class UserInfoUpdated extends UserInfoState {
     bool? isMale,
     double? percent,
     int? currentIndex,
+    String? selectedChapter,
   }) {
     return UserInfoUpdated(
       isStudent: isStudent ?? this.isStudent,
       isMale: isMale ?? this.isMale,
       percent: percent ?? this.percent,
       currentIndex: currentIndex ?? this.currentIndex,
+      selectedChapter: selectedChapter ?? this.selectedChapter,
     );
   }
 }

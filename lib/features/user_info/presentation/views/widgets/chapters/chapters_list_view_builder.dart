@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/features/user_info/presentation/manager/user_info_cubit.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters/chapters_list_view_item.dart';
 
 class ChaptersListVIewBuilder extends StatelessWidget {
@@ -42,13 +44,25 @@ class ChaptersListVIewBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: partsOfQuran.length,
-      padding: EdgeInsets.symmetric(horizontal: 16.w),
-      physics: const BouncingScrollPhysics(),
-      itemBuilder: (context, index) {
-        return ChaptersListViewItem(
-          text: partsOfQuran[index],
+    return BlocBuilder<UserInfoCubit, UserInfoState>(
+      builder: (context, state) {
+        String? selectedChapter =
+            (state is UserInfoUpdated) ? state.selectedChapter : null;
+        return ListView.builder(
+          itemCount: partsOfQuran.length,
+          padding: EdgeInsets.symmetric(horizontal: 16.w),
+          physics: const BouncingScrollPhysics(),
+          itemBuilder: (context, index) {
+            final chapter = partsOfQuran[index];
+            final isSelected = selectedChapter == chapter;
+            return ChaptersListViewItem(
+              text: partsOfQuran[index],
+              isSelected: isSelected,
+              onTap: () {
+                context.read<UserInfoCubit>().selectChapter(chapter);
+              },
+            );
+          },
         );
       },
     );

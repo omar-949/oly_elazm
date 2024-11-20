@@ -37,4 +37,11 @@ class UserInfoCubit extends Cubit<UserInfoState> {
       emit((state as UserInfoUpdated).copyWith(currentIndex: index));
     }
   }
+  // Update the selected chapter
+  void selectChapter(String chapter) {
+    final currentState = state;
+    if (currentState is UserInfoUpdated) {
+      emit(currentState.copyWith(selectedChapter: chapter));
+    }
+  }
 }
