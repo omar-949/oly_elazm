@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/routing/named_router_impl.dart';
-import 'package:oly_elazm/core/theme/app_colors.dart';
 import 'package:oly_elazm/oly_elazm.dart';
 
 void main() async {
@@ -15,9 +14,11 @@ void main() async {
     EasyLocalization(
       supportedLocales: const [
         Locale('ar'),
+        Locale('en'),
       ],
       path: 'assets/translations',
-      child: OlyElazm(
+      startLocale: Locale('ar'),
+      child: OlyElazm( 
         appRouter: AppRouter(),
       ),
     ),
@@ -34,9 +35,9 @@ class SystemUIConfig {
   static void setSystemUIStyles() {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.mainAppColor,
-        statusBarColor: AppColors.mainAppColor,
-        statusBarIconBrightness: Brightness.light,
+        systemNavigationBarColor:Colors.transparent,
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
       ),
     );
   }

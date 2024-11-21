@@ -8,4 +8,5 @@ class Routes {
   static const String dashboard = '/dashboard';
   static const String userInfo = '/userInfo';
   static const String mainNav = '/mainNav';
+  static const String studentProgress = '/studentProgress';
 }

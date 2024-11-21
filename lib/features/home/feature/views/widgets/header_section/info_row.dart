@@ -11,13 +11,16 @@ class InfoRow extends StatelessWidget {
     return Positioned(
       left: 20.w,
       right: 60.w,
-      bottom: 60.h,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: const [
-          PrayerTimeDetails(),
-          TodayDate(),
-        ],
+      bottom: 70.h,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: const [
+            PrayerTimeDetails(),
+            TodayDate(),
+          ],
+        ),
       ),
     );
   }

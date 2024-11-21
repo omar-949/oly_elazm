@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/helpers/extentions.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students/student_list_item.dart';
 
 class StudentListView extends StatelessWidget {
@@ -22,7 +24,10 @@ class StudentListView extends StatelessWidget {
               left: isLastItem ? 0 : 12.w,
               bottom: 12.h,
             ),
-            child: StudentListItem(),
+            child: GestureDetector(
+              onTap: () => context.pushNamed(Routes.studentProgress),
+              child: StudentListItem(),
+            ),
           );
         },
       ),
