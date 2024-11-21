@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/student_list_item.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students/student_list_view.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students/students_list_header.dart';
 
@@ -15,7 +14,7 @@ class StudentSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: StudentsListHeader(),
         ),
-        8.verticalSpace,
+        16.verticalSpace,
         StudentListView(),
       ],
     );
