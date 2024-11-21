@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oly_elazm/features/auth/presentation/views/widgets/app_back_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/reset_password/reset_password_body.dart';
 
 class ResetPasswordView extends StatelessWidget {
@@ -6,7 +7,12 @@ class ResetPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
+      appBar: AppBar(
+        actions: [
+          AppBackButton(),
+        ],
+      ),
       body: ResetPasswordBody(),
     );
   }

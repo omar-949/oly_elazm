@@ -37,14 +37,16 @@ class Selector extends StatelessWidget {
           child: UserInfoItem(
             image: optionModel.image1,
             info: optionModel.option1,
-            isSelected: context.select((UserInfoCubit cubit) {
-              if (optionModel.type == SelectionType.gender) {
-                return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == true;
-              } else if (optionModel.type == SelectionType.role) {
-                return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == true;
-              }
-              return false;
-            }),
+            isSelected: context.select(
+              (UserInfoCubit cubit) {
+                if (optionModel.type == SelectionType.gender) {
+                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == true;
+                } else if (optionModel.type == SelectionType.role) {
+                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == true;
+                }
+                return false;
+              },
+            ),
           ),
         ),
         64.verticalSpace,
@@ -60,14 +62,16 @@ class Selector extends StatelessWidget {
           child: UserInfoItem(
             image: optionModel.image2,
             info: optionModel.option2,
-            isSelected: context.select((UserInfoCubit cubit) {
-              if (optionModel.type == SelectionType.gender) {
-                return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == false;
-              } else if (optionModel.type == SelectionType.role) {
-                return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == false;
-              }
-              return false;
-            }),
+            isSelected: context.select(
+              (UserInfoCubit cubit) {
+                if (optionModel.type == SelectionType.gender) {
+                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == false;
+                } else if (optionModel.type == SelectionType.role) {
+                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == false;
+                }
+                return false;
+              },
+            ),
           ),
         ),
       ],

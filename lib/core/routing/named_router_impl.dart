@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oly_elazm/core/widgets/main_navigator.dart';
 import 'package:oly_elazm/features/auth/presentation/views/forget_password_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/login_sign_up_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/reset_password_view.dart';
@@ -39,6 +40,10 @@ class AppRouter {
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (_) => const ResetPasswordView(),
+        );
+      case Routes.mainNav:
+        return MaterialPageRoute(
+          builder: (_) => const MainNavigator(),
         );
       default:
         return MaterialPageRoute(

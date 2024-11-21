@@ -16,8 +16,8 @@ class _SplashBodyState extends State<SplashBody> {
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        if(context.mounted) {
-         context.pushReplacementNamed(Routes.onboardingScreen);
+        if (mounted) {
+          context.pushReplacementNamed(Routes.onboardingScreen);
         }
       },
     );

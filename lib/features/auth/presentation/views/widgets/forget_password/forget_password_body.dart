@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oly_elazm/features/auth/presentation/views/widgets/app_back_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_header.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/forget_password/forget_password_form.dart';
 
@@ -11,7 +10,6 @@ class ForgetPasswordBody extends StatelessWidget {
     return const SafeArea(
       child: Column(
         children: [
-          AppBackButton(),
           AuthHeader(
             title: 'نسيت كلمة المرور؟',
             description:

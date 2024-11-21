@@ -12,7 +12,6 @@ class ResetPasswordBody extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            AppBackButton(),
             AuthHeader(
               title: 'إعادة تعيين كلمة المرور',
               description: 'يرجى إدخال كلمة المرور الجديدة الخاصة بك، ثم تأكيدها. تأكد من أن كلمة المرور قوية وتتكون من 8 أحرف على الأقل.',

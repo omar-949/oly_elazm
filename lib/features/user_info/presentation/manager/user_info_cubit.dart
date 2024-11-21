@@ -4,10 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 part 'user_info_state.dart';
 
 class UserInfoCubit extends Cubit<UserInfoState> {
-  UserInfoCubit() : super(UserInfoUpdated(isStudent: null, isMale: null, percent: 0.0, currentIndex: 0));
-
-  // النضافة حلوة برضوا
-
+  UserInfoCubit() : super(UserInfoUpdated(isStudent: null, isMale: null, percent: 0.0, currentIndex: 0,));
   // Update role (Student or not)
   void updateRole(bool value) {
     final currentState = state;
@@ -59,9 +56,10 @@ class UserInfoCubit extends Cubit<UserInfoState> {
 
   // Update the current index of the PageView
   void updateCurrentIndex(int index) {
-    if (state is UserInfoUpdated) {
+    final currentState = state;
+    if (currentState is UserInfoUpdated) {
       emit(
-        (state as UserInfoUpdated).copyWith(
+        currentState.copyWith(
           currentIndex: index,
         ),
       );
