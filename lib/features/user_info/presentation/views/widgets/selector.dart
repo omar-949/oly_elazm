@@ -18,63 +18,59 @@ class Selector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          optionModel.title,
-          style: AppTextStyle.font18SemiBold(color: Colors.black),
-        ),
-        20.verticalSpace,
-        GestureDetector(
-          onTap: () {
-            onSelectionChanged(true);
-            if (optionModel.type == SelectionType.gender) {
-              context.read<UserInfoCubit>().updateGender(true);
-            } else if (optionModel.type == SelectionType.role) {
-              context.read<UserInfoCubit>().updateRole(true);
-            }
-          },
-          child: UserInfoItem(
-            image: optionModel.image1,
-            info: optionModel.option1,
-            isSelected: context.select(
-              (UserInfoCubit cubit) {
-                if (optionModel.type == SelectionType.gender) {
-                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == true;
-                } else if (optionModel.type == SelectionType.role) {
-                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == true;
-                }
-                return false;
-              },
+    return BlocBuilder<UserInfoCubit, UserInfoState>(
+      builder: (context, state) {
+        bool? isSelected;
+
+        if (state is UserInfoUpdated) {
+          if (optionModel.type == SelectionType.gender) {
+            isSelected = state.isMale;
+          } else if (optionModel.type == SelectionType.role) {
+            isSelected = state.isStudent;
+          }
+        }
+
+        return Column(
+          children: [
+            Text(
+              optionModel.title,
+              style: AppTextStyle.font18SemiBold(color: Colors.black),
             ),
-          ),
-        ),
-        64.verticalSpace,
-        GestureDetector(
-          onTap: () {
-            onSelectionChanged(false);
-            if (optionModel.type == SelectionType.gender) {
-              context.read<UserInfoCubit>().updateGender(false);
-            } else if (optionModel.type == SelectionType.role) {
-              context.read<UserInfoCubit>().updateRole(false);
-            }
-          },
-          child: UserInfoItem(
-            image: optionModel.image2,
-            info: optionModel.option2,
-            isSelected: context.select(
-              (UserInfoCubit cubit) {
+            20.verticalSpace,
+            GestureDetector(
+              onTap: () {
+                onSelectionChanged(true);
                 if (optionModel.type == SelectionType.gender) {
-                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isMale == false;
+                  context.read<UserInfoCubit>().updateGender(true);
                 } else if (optionModel.type == SelectionType.role) {
-                  return cubit.state is UserInfoUpdated && (cubit.state as UserInfoUpdated).isStudent == false;
+                  context.read<UserInfoCubit>().updateRole(true);
                 }
-                return false;
               },
+              child: UserInfoItem(
+                image: optionModel.image1,
+                info: optionModel.option1,
+                isSelected: isSelected ?? false,
+              ),
             ),
-          ),
-        ),
-      ],
+            64.verticalSpace,
+            GestureDetector(
+              onTap: () {
+                onSelectionChanged(false);
+                if (optionModel.type == SelectionType.gender) {
+                  context.read<UserInfoCubit>().updateGender(false);
+                } else if (optionModel.type == SelectionType.role) {
+                  context.read<UserInfoCubit>().updateRole(false);
+                }
+              },
+              child: UserInfoItem(
+                image: optionModel.image2,
+                info: optionModel.option2,
+                isSelected: isSelected == false,
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

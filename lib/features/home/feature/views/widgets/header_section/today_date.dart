@@ -4,36 +4,49 @@ import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 
-class TodayDate extends StatelessWidget {
+class TodayDate extends StatefulWidget {
   const TodayDate({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final gregorianDate =
-        DateFormat('EEEE , d MMMM', 'ar').format(DateTime.now());
+  State<TodayDate> createState() => _TodayDateState();
+}
+
+class _TodayDateState extends State<TodayDate> {
+  late String gregorianDate;
+  late String hijriFormattedDate;
+
+  final hijriMonthsArabic = [
+    "محرم",
+    "صفر",
+    "ربيع الأول",
+    "ربيع الآخر",
+    "جمادى الأولى",
+    "جمادى الآخرة",
+    "رجب",
+    "شعبان",
+    "رمضان",
+    "شوّال",
+    "ذو القعدة",
+    "ذو الحجة"
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+
+    gregorianDate = DateFormat('EEEE , d MMMM', 'ar').format(DateTime.now());
 
     final hijriDate = HijriCalendar.fromDate(DateTime.now());
 
-    final hijriMonthsArabic = [
-      "محرم",
-      "صفر",
-      "ربيع الأول",
-      "ربيع الآخر",
-      "جمادى الأولى",
-      "جمادى الآخرة",
-      "رجب",
-      "شعبان",
-      "رمضان",
-      "شوّال",
-      "ذو القعدة",
-      "ذو الحجة"
-    ];
+    hijriFormattedDate = '${hijriDate.hDay} ${hijriMonthsArabic[hijriDate.hMonth - 1]} | ${hijriDate.hYear} هجري';
+  }
 
-    final hijriFormattedDate = '${hijriDate.hDay} ${hijriMonthsArabic[hijriDate.hMonth - 1]} | ${hijriDate.hYear} هجري';
-
+  @override
+  Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        // Gregorian date
         Text(
           gregorianDate,
           style: AppTextStyle.font16Regular(color: Colors.white),

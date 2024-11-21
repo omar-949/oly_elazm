@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/routing/named_router_impl.dart';
-import 'package:oly_elazm/core/theme/app_colors.dart';
 import 'package:oly_elazm/oly_elazm.dart';
 
 void main() async {
