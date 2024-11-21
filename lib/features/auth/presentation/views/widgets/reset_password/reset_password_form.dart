@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
+import 'package:oly_elazm/core/widgets/app_form_item.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
-import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/reset_password/success_dialog.dart';
 
 class ResetPasswordForm extends StatefulWidget {
@@ -42,7 +42,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            AuthTextField(
+            AppFormItem(
               title: 'كلمة المرور',
               hint: 'ادخل كلمة المرور الجديدة',
               controller: passwordController,
@@ -51,7 +51,7 @@ class _ResetPasswordFormState extends State<ResetPasswordForm> {
               autoValidateMode: autoValidateMode,
             ),
             16.verticalSpace,
-            AuthTextField(
+            AppFormItem(
               title: 'تأكيد كلمة المرور',
               hint: 'ادخل كلمة المرور الجديدة',
               controller: confirmPasswordController,

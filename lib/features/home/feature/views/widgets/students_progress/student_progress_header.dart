@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/background_curved_container.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/student_image.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/background_curved_container.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_image.dart';
 
 class StudentProgressHeader extends StatelessWidget {
   const StudentProgressHeader({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/oval_bottom_clipper.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/oval_bottom_clipper.dart';
 
 class BackgroundCurvedContainer extends StatelessWidget {
   const BackgroundCurvedContainer({super.key});

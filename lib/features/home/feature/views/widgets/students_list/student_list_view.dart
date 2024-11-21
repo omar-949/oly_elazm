@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/student_list_item.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students_list/student_list_item.dart';
 
 class StudentListView extends StatelessWidget {
   const StudentListView({super.key});

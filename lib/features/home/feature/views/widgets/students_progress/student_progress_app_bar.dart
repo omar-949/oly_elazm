@@ -3,7 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 
-class StudentDetailsAppBar extends StatelessWidget implements PreferredSizeWidget {
+class StudentDetailsAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
   const StudentDetailsAppBar({
     super.key,
   });
@@ -13,6 +14,8 @@ class StudentDetailsAppBar extends StatelessWidget implements PreferredSizeWidge
     return AppBar(
       title: Text('المُحفظ'),
       titleTextStyle: AppTextStyle.font20Medium(),
+      elevation: 0,
+      scrolledUnderElevation: 0,
       centerTitle: true,
       leading: IconButton(
         onPressed: () => context.pop(),

@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
+import 'package:oly_elazm/core/widgets/app_form_item.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
-import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 
 class ForgetPasswordForm extends StatefulWidget {
   const ForgetPasswordForm({super.key});
@@ -40,7 +40,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            AuthTextField(
+            AppFormItem(
               title: 'البريد الالكتروني',
               hint: 'ادخل بريدك الالكتروني',
               controller: emailController,

@@ -4,7 +4,7 @@ import 'package:oly_elazm/features/auth/presentation/views/forget_password_view.
 import 'package:oly_elazm/features/auth/presentation/views/login_sign_up_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/reset_password_view.dart';
 import 'package:oly_elazm/features/auth/presentation/views/verification_code_view.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/student_progress.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_progress.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/user_info.dart';

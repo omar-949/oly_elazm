@@ -5,8 +5,8 @@ import 'package:oly_elazm/core/helpers/validations.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/theme/app_colors.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
+import 'package:oly_elazm/core/widgets/app_form_item.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
-import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/login_sign_up/social_buttons.dart';
 
 class LoginForm extends StatefulWidget {
@@ -45,7 +45,7 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           24.verticalSpace,
-          AuthTextField(
+          AppFormItem(
             title: 'البريد الالكتروني',
             hint: 'ادخل بريدك الالكتروني',
             controller: emailController,
@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
             autoValidateMode: autoValidateMode,
           ),
           16.verticalSpace,
-          AuthTextField(
+          AppFormItem(
             title: 'كلمة المرور',
             hint: 'ادخل كلمة المرور',
             controller: passwordController,

@@ -4,15 +4,16 @@ import 'package:oly_elazm/core/theme/app_colors.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/core/widgets/app_text_form.dart';
 
-class AuthTextField extends StatelessWidget {
-  const AuthTextField({
+class AppFormItem extends StatelessWidget {
+  const AppFormItem({
     super.key,
     required this.title,
     required this.hint,
     required this.controller,
     this.type,
     this.isPassword,
-    required this.validator, this.autoValidateMode,
+    this.validator,
+    this.autoValidateMode,
   });
 
   final String title;
@@ -20,7 +21,7 @@ class AuthTextField extends StatelessWidget {
   final TextEditingController controller;
   final TextInputType? type;
   final bool? isPassword;
-  final Function(String?) validator;
+  final Function(String?)? validator;
   final AutovalidateMode? autoValidateMode;
 
   @override
@@ -43,7 +44,7 @@ class AuthTextField extends StatelessWidget {
           focusColor: AppColors.secondaryAppColor,
           type: type,
           isPassword: isPassword,
-          validator: validator,
+          validator: validator ?? (value) {},
           autoValidateMode: autoValidateMode,
         ),
       ],

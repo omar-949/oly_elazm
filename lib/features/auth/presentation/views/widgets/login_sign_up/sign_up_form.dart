@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
+import 'package:oly_elazm/core/widgets/app_form_item.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
-import 'package:oly_elazm/features/auth/presentation/views/widgets/auth_text_field.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/login_sign_up/license_check_box.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/login_sign_up/social_buttons.dart';
 
@@ -45,7 +45,7 @@ class _SignUpFormState extends State<SignUpForm> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           24.verticalSpace,
-          AuthTextField(
+          AppFormItem(
             title: 'البريد الالكتروني',
             hint: 'ادخل بريدك الالكتروني',
             controller: emailController,
@@ -53,7 +53,7 @@ class _SignUpFormState extends State<SignUpForm> {
             validator: Validations.emailValidator,
           ),
           16.verticalSpace,
-          AuthTextField(
+          AppFormItem(
             title: 'رقم الهاتف',
             hint: 'ادخل رقم الهاتف',
             controller: phoneNumberController,
@@ -62,7 +62,7 @@ class _SignUpFormState extends State<SignUpForm> {
             autoValidateMode: autoValidateMode,
           ),
           16.verticalSpace,
-          AuthTextField(
+          AppFormItem(
             title: 'كلمة المرور',
             hint: 'ادخل كلمة المرور',
             controller: passwordController,
