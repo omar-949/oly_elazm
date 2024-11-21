@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/background_curved_container.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students/student_image.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students/student_name_and_points.dart';
+import 'package:oly_elazm/features/home/feature/views/widgets/students/student_progress_header.dart';
 
 class StudentProgressBody extends StatelessWidget {
   const StudentProgressBody({super.key});
@@ -10,14 +11,9 @@ class StudentProgressBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Stack(
-            alignment: Alignment.center,
-            clipBehavior: Clip.none,
-            children: const [
-              BackgroundCurvedContainer(),
-              StudentImage(),
-            ],
-          ),
+          StudentProgressHeader(),
+          16.verticalSpace,
+          StudentNameAndPoints(),
         ],
       ),
     );
