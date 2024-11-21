@@ -20,11 +20,6 @@ class StudentListItem extends StatelessWidget {
             spreadRadius: 0.1,
             offset: Offset(2, 2),
           ),
-          BoxShadow(
-            color: Colors.white,
-            blurRadius: 4,
-            offset: Offset(-2, -2),
-          ),
         ],
         color: Colors.white,
       ),

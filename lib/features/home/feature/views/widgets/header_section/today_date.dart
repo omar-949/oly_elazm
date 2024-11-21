@@ -46,7 +46,6 @@ class _TodayDateState extends State<TodayDate> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Gregorian date
         Text(
           gregorianDate,
           style: AppTextStyle.font16Regular(color: Colors.white),

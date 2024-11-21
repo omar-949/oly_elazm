@@ -83,6 +83,10 @@ class AppTextStyle {
         fontSize: 20.sp,
         color: color,
         fontWeight: FontWeightHelper.regular,
+      );  static TextStyle font20SemiBold({Color? color = Colors.black}) => TextStyle(
+        fontSize: 20.sp,
+        color: color,
+        fontWeight: FontWeightHelper.semiBold,
       );
 
   static TextStyle font20Medium({Color? color = Colors.black}) => TextStyle(
