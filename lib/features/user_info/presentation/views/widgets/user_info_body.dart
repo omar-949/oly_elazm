@@ -89,7 +89,7 @@ class UserInfoBody extends StatelessWidget {
                       context.pushNamed(Routes.loginSignUpScreen);
                     }
                   },
-                  title: userInfoState.percent == 1.0 ? 'تم' : 'التالي',
+                  title: userInfoState.currentIndex < widgets.length - 1 ? 'التالي' : 'تم',
                 ),
               ),
             ],

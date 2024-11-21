@@ -63,6 +63,10 @@ class AppTextStyle {
         fontSize: 16.sp,
         color: color,
         fontWeight: FontWeightHelper.regular,
+      );  static TextStyle font12Regular({Color? color = Colors.black}) => TextStyle(
+        fontSize: 12.sp,
+        color: color,
+        fontWeight: FontWeightHelper.regular,
       );
 
   static TextStyle font14Regular({Color? color = Colors.black}) => TextStyle(
