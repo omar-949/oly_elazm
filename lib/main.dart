@@ -34,8 +34,9 @@ class SystemUIConfig {
   static void setSystemUIStyles() {
     SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(
-        systemNavigationBarColor: AppColors.mainAppColor,
-        statusBarColor: AppColors.mainAppColor,
+        systemNavigationBarColor: Colors.transparent,
+        statusBarColor: Colors.transparent,
+        statusBarIconBrightness: Brightness.dark,
       ),
     );
   }
