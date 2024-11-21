@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/core/widgets/app_form_item.dart';
 import 'package:oly_elazm/core/widgets/custom_app_button.dart';
 
@@ -44,6 +45,7 @@ class _StudentFormState extends State<StudentForm> {
               hint: 'اكتب تعليقك هنا',
               borderRadius: 20.r,
               controller: commentController,
+              textStyle: AppTextStyle.font16Bold(),
             ),
             16.verticalSpace,
             AppFormItem(
@@ -51,6 +53,7 @@ class _StudentFormState extends State<StudentForm> {
               hint: 'اكتب الحفظ  هنا',
               borderRadius: 20.r,
               controller: newLessonController,
+              textStyle: AppTextStyle.font16Bold(),
             ),
             16.verticalSpace,
             AppFormItem(
@@ -58,6 +61,7 @@ class _StudentFormState extends State<StudentForm> {
               hint: 'اضف الرابط هنا',
               borderRadius: 20.r,
               controller: linkController,
+              textStyle: AppTextStyle.font16Bold(),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 32.h),
