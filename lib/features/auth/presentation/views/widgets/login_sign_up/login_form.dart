@@ -64,13 +64,13 @@ class _LoginFormState extends State<LoginForm> {
           ),
           6.verticalSpace,
           GestureDetector(
-            onTap: (){
+            onTap: () {
               context.pushNamed(Routes.forgetPasswordScreen);
             },
             child: Text(
               'نسيت كلمة المرور؟',
-              style:
-                  AppTextStyle.font16Regular(color: AppColors.secondaryAppColor),
+              style: AppTextStyle.font16Regular(
+                  color: AppColors.secondaryAppColor),
             ),
           ),
           Padding(
@@ -79,6 +79,7 @@ class _LoginFormState extends State<LoginForm> {
               onTap: () {
                 FocusManager.instance.primaryFocus?.unfocus();
                 if (formKey.currentState!.validate()) {
+                  context.pushReplacementNamed(Routes.mainNav);
                 } else if (autoValidateMode != AutovalidateMode.always) {
                   autoValidateMode = AutovalidateMode.always;
                   setState(() {});

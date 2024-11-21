@@ -14,6 +14,7 @@ class AppFormItem extends StatelessWidget {
     this.isPassword,
     this.validator,
     this.autoValidateMode,
+    this.borderRadius,
   });
 
   final String title;
@@ -23,6 +24,7 @@ class AppFormItem extends StatelessWidget {
   final bool? isPassword;
   final Function(String?)? validator;
   final AutovalidateMode? autoValidateMode;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +40,7 @@ class AppFormItem extends StatelessWidget {
           hint: hint,
           controller: controller,
           fillColor: Colors.white,
-          borderRadius: 10,
+          borderRadius: borderRadius ?? 10,
           enabledColor: AppColors.grey,
           textStyle: AppTextStyle.font16Regular(),
           focusColor: AppColors.secondaryAppColor,

@@ -23,7 +23,6 @@ class StudentProgressBody extends StatelessWidget {
             title: 'الحفظ',
             content: 'حفظ الطالب ثلاث أجزاء من القرآن الكريم',
           ),
-          10.verticalSpace,
           LessonOverViewCard(
             title: 'مكرر حفظ اليوم',
             content: 'سورة النساء صفحة 79',

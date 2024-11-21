@@ -42,18 +42,21 @@ class _StudentFormState extends State<StudentForm> {
             AppFormItem(
               title: 'اضافة تعليق',
               hint: 'اكتب تعليقك هنا',
+              borderRadius: 20.r,
               controller: commentController,
             ),
             16.verticalSpace,
             AppFormItem(
               title: 'اضافة حفظ جديد',
               hint: 'اكتب الحفظ  هنا',
+              borderRadius: 20.r,
               controller: newLessonController,
             ),
             16.verticalSpace,
             AppFormItem(
               title: 'اضافة رابط تسميع',
               hint: 'اضف الرابط هنا',
+              borderRadius: 20.r,
               controller: linkController,
             ),
             Padding(
