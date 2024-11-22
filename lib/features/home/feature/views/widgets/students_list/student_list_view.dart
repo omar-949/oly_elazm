@@ -16,7 +16,7 @@ class StudentListView extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         itemCount: 10,
-        cacheExtent: 500,
+        cacheExtent: 300,
         itemBuilder: (context, index) {
           bool isLastItem = index == 9;
           return Padding(

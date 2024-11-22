@@ -9,7 +9,6 @@ class StudentListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 180.h,
       width: 165.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16.r),
@@ -26,22 +25,21 @@ class StudentListItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(16.r),
-                  topLeft: Radius.circular(16.r),
-                ),
-                color: AppColors.secondaryAppColor,
+          Container(
+            width: double.infinity,
+            height: 100.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(16.r),
+                topLeft: Radius.circular(16.r),
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(16.r),
-                child: Image.asset(
-                  'assets/images/student.png',
-                  fit: BoxFit.contain,
-                ),
+              color: AppColors.secondaryAppColor,
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16.r),
+              child: Image.asset(
+                'assets/images/student.png',
+                fit: BoxFit.contain,
               ),
             ),
           ),
@@ -51,10 +49,11 @@ class StudentListItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'محمد علي',
+                  'محمد علي خالد محمد س',
                   style: AppTextStyle.font16Regular(
                     color: Color(0xff5C649D),
                   ),
+                  overflow: TextOverflow.ellipsis,
                 ),
                 4.verticalSpace,
                 Text(
