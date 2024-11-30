@@ -38,19 +38,19 @@ class _CustomDropDownState extends State<CustomDropDown> {
             });
           },
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 16.w),
+            margin: EdgeInsets.symmetric(horizontal: 0.w),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12.r),
               border: Border.all(
                 color: AppColors.mainAppColor,
-                width: 1.2,
+                width: 1,
               ),
             ),
             child: Column(
               children: [
                 Padding(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 5.h),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

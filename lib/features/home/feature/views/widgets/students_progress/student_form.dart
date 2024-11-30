@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/theme/app_text_style.dart';
 import 'package:oly_elazm/core/widgets/app_form_item.dart';
-import 'package:oly_elazm/core/widgets/custom_app_button.dart';
+import 'package:oly_elazm/core/widgets/app_gradient_button.dart';
 
 class StudentForm extends StatefulWidget {
   const StudentForm({super.key});

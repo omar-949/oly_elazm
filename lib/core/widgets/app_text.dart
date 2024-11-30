@@ -14,6 +14,7 @@ class AppText extends StatelessWidget {
   final TextOverflow? textOverflow;
   final TextDecoration? decoration;
 
+
   const AppText(
       {super.key,
       required this.text,

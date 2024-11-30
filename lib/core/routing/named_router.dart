@@ -10,4 +10,6 @@ class Routes {
   static const String mainNav = '/mainNav';
   static const String studentProgress = '/studentProgress';
   static const String todayMemorization = '/todayMemorization';
+  static const String settingView = '/settingView';
+  static const String editProfileView = '/editProfileView';
 }

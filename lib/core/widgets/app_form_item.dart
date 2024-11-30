@@ -14,7 +14,9 @@ class AppFormItem extends StatelessWidget {
     this.isPassword,
     this.validator,
     this.autoValidateMode,
-    this.borderRadius, this.textStyle,
+    this.borderRadius,
+    this.textStyle,
+    this.suffix,
   });
 
   final String title;
@@ -26,6 +28,7 @@ class AppFormItem extends StatelessWidget {
   final AutovalidateMode? autoValidateMode;
   final double? borderRadius;
   final TextStyle? textStyle;
+  final Widget? suffix;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +52,7 @@ class AppFormItem extends StatelessWidget {
           isPassword: isPassword,
           validator: validator ?? (value) {},
           autoValidateMode: autoValidateMode,
+          suffix: suffix,
         ),
       ],
     );

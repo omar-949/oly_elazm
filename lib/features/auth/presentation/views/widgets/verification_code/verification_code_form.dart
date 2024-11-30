@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
-import 'package:oly_elazm/core/widgets/custom_app_button.dart';
+import 'package:oly_elazm/core/widgets/app_gradient_button.dart';
 import 'package:oly_elazm/features/auth/presentation/views/widgets/verification_code/code_pinput.dart';
 
 class VerificationCodeForm extends StatefulWidget {

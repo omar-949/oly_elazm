@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_progress_app_bar.dart';
+import 'package:oly_elazm/core/widgets/app_bar.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_progress_body.dart';
 
 class StudentProgress extends StatelessWidget {
@@ -8,7 +8,7 @@ class StudentProgress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: StudentDetailsAppBar(),
+      appBar: CustomAppBar(title: 'المُحفظ',),
       body: StudentProgressBody(),
     );
   }

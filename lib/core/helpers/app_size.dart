@@ -67,6 +67,7 @@ class AppSize {
   static double get h156 => 156.h;
   static double get h185 => 185.h;
   static double get h195 => 195.h;
+  static double get h207 => 207.h;
 
   /// App Constant Width ///
 

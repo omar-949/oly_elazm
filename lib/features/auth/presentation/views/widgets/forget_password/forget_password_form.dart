@@ -4,7 +4,7 @@ import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/helpers/validations.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
 import 'package:oly_elazm/core/widgets/app_form_item.dart';
-import 'package:oly_elazm/core/widgets/custom_app_button.dart';
+import 'package:oly_elazm/core/widgets/app_gradient_button.dart';
 
 class ForgetPasswordForm extends StatefulWidget {
   const ForgetPasswordForm({super.key});

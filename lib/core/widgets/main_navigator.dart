@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/core/widgets/app_nav_bar.dart';
 import 'package:oly_elazm/features/home/feature/views/home_view.dart';
+import 'package:oly_elazm/features/settings/presentation/views/setting_view.dart';
 
 class MainNavigator extends StatefulWidget {
   const MainNavigator({super.key});
@@ -17,7 +18,7 @@ class _MainNavigatorState extends State<MainNavigator> {
     const PlaceholderScreen(title: 'Mosque Screen'),
     const PlaceholderScreen(title: 'Book Screen'),
     const PlaceholderScreen(title: 'Pray Screen'),
-    const PlaceholderScreen(title: 'Settings Screen'),
+    const SettingView(),
   ];
 
   void _onItemTapped(int index) {

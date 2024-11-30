@@ -7,6 +7,8 @@ import 'package:oly_elazm/features/auth/presentation/views/verification_code_vie
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_progress.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
+import 'package:oly_elazm/features/settings/presentation/views/edit_profile_view.dart';
+import 'package:oly_elazm/features/settings/presentation/views/setting_view.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/user_info.dart';
 import '../../features/home/feature/views/widgets/today_memorization_plan/today_memorization.dart';
 import 'named_router.dart';
@@ -53,6 +55,14 @@ class AppRouter {
       case Routes.todayMemorization:
         return MaterialPageRoute(
           builder: (_) => const TodayMemorization(),
+        );
+      case Routes.settingView:
+        return MaterialPageRoute(
+          builder: (_) => const SettingView(),
+        );
+      case Routes.editProfileView:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfileView(),
         );
       default:
         return MaterialPageRoute(

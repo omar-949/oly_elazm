@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
 import 'package:oly_elazm/core/routing/named_router.dart';
-import 'package:oly_elazm/core/widgets/custom_app_button.dart';
+import 'package:oly_elazm/core/widgets/app_gradient_button.dart';
 import 'package:oly_elazm/features/user_info/data/model/selector_model.dart';
 import 'package:oly_elazm/features/user_info/presentation/manager/user_info_cubit.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/widgets/chapters/chapters.dart';

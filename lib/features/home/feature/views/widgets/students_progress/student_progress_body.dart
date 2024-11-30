@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/lesson_over_view_card.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_form.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_name_and_points.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_progress_header.dart';
+import 'package:oly_elazm/core/widgets/student_progress_header.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_rating.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/time_remaining.dart';
 
