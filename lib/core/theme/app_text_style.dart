@@ -13,115 +13,140 @@ class AppTextStyle {
       fontSize: textSize,
       color: textColor,
       fontWeight: textWeight,
+      fontFamily: 'ElMessiri', // Add the font family here
       decoration: decoration,
     );
   }
 
   static TextStyle font32SemiBold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 32.sp,
-        color: color,
-        fontWeight: FontWeightHelper.semiBold,
-      );
+    fontSize: 32.sp,
+    color: color,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font32Bold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 32.sp,
-        color: color,
-        fontWeight: FontWeightHelper.bold,
-      );
+    fontSize: 32.sp,
+    color: color,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font18SemiBold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 18.sp,
-        color: color,
-        fontWeight: FontWeightHelper.semiBold,
-      );
+    fontSize: 18.sp,
+    color: color,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font16SemiBold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 16.sp,
-        color: color,
-        fontWeight: FontWeightHelper.semiBold,
-      );
+    fontSize: 16.sp,
+    color: color,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font16Medium({Color? color = Colors.black}) => TextStyle(
-        fontSize: 16.sp,
-        color: color,
-        fontWeight: FontWeightHelper.medium,
-      );
+    fontSize: 16.sp,
+    color: color,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font18Medium({Color? color = Colors.black}) => TextStyle(
-        fontSize: 18.sp,
-        color: color,
-        fontWeight: FontWeightHelper.medium,
-      );
+    fontSize: 18.sp,
+    color: color,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font18Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 18.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 18.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font16Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 16.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 16.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font12Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 12.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 12.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font14Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 14.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 14.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font14Medium({Color? color = Colors.black}) => TextStyle(
-        fontSize: 14.sp,
-        color: color,
-        fontWeight: FontWeightHelper.medium,
-      );
+    fontSize: 14.sp,
+    color: color,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font20Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 20.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 20.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font20SemiBold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 20.sp,
-        color: color,
-        fontWeight: FontWeightHelper.semiBold,
-      );
+    fontSize: 20.sp,
+    color: color,
+    fontWeight: FontWeightHelper.semiBold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font20Medium({Color? color = Colors.black}) => TextStyle(
-        fontSize: 20.sp,
-        color: color,
-        fontWeight: FontWeightHelper.medium,
-      );
+    fontSize: 20.sp,
+    color: color,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font24Regular({Color? color = Colors.black}) => TextStyle(
-        fontSize: 24.sp,
-        color: color,
-        fontWeight: FontWeightHelper.regular,
-      );
+    fontSize: 24.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font24Bold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 24.sp,
-        color: color,
-        fontWeight: FontWeightHelper.bold,
-      );
+    fontSize: 24.sp,
+    color: color,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font18Bold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 18.sp,
-        color: color,
-        fontWeight: FontWeightHelper.bold,
-      );
+    fontSize: 18.sp,
+    color: color,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: 'ElMessiri',
+  );
 
   static TextStyle font16Bold({Color? color = Colors.black}) => TextStyle(
-        fontSize: 16.sp,
-        color: color,
-        fontWeight: FontWeightHelper.bold,
-      );
+    fontSize: 16.sp,
+    color: color,
+    fontWeight: FontWeightHelper.bold,
+    fontFamily: 'ElMessiri',
+  );
+  static TextStyle font50Regular({Color? color = Colors.black}) => TextStyle(
+    fontSize: 50.sp,
+    color: color,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: 'ElMessiri',
+  );
 }

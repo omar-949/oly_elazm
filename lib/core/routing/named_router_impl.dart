@@ -8,7 +8,7 @@ import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/
 import 'package:oly_elazm/features/onboarding/presentation/views/onboarding_view.dart';
 import 'package:oly_elazm/features/onboarding/presentation/views/splash_view.dart';
 import 'package:oly_elazm/features/user_info/presentation/views/user_info.dart';
-
+import '../../features/home/feature/views/widgets/today_memorization_plan/today_memorization.dart';
 import 'named_router.dart';
 
 class AppRouter {
@@ -49,6 +49,10 @@ class AppRouter {
       case Routes.studentProgress:
         return MaterialPageRoute(
           builder: (_) => const StudentProgress(),
+        );
+      case Routes.todayMemorization:
+        return MaterialPageRoute(
+          builder: (_) => const TodayMemorization(),
         );
       default:
         return MaterialPageRoute(
