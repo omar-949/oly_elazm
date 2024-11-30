@@ -18,6 +18,12 @@ class AppTextStyle {
     );
   }
 
+  static TextStyle font40SemiBold({Color? color = Colors.black}) => TextStyle(
+    color: color,
+    fontFamily: 'ElMessiri',
+    fontSize: 40.sp,
+    fontWeight: FontWeightHelper.semiBold,
+  );
   static TextStyle font32SemiBold({Color? color = Colors.black}) => TextStyle(
     fontSize: 32.sp,
     color: color,
