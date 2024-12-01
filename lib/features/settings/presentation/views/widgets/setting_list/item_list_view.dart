@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/core/helpers/app_size.dart';
 import 'package:oly_elazm/core/helpers/extentions.dart';
-import '../../../../../../core/routing/named_router.dart';
+import 'package:oly_elazm/core/routing/named_router.dart';
 import 'custom_list_item.dart';
+import 'expandable_item.dart';
 
 class ItemListView extends StatelessWidget {
   const ItemListView({super.key});
@@ -11,8 +12,7 @@ class ItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: AppSize.w358,
-      height: AppSize.h207,
-      child: ListView(
+      child: Column(
         children: [
           CustomListItem(
             icon: 'assets/svgs/tabler_edit.svg',
@@ -22,19 +22,18 @@ class ItemListView extends StatelessWidget {
             },
           ),
           Divider(),
-          CustomListItem(
+          ExpandableItem(
             icon: 'assets/svgs/discord_boost.svg',
-            label: 'عدد النقاط',
-            onTap: () {
-              // Handle navigation or logic here
-            },
+            title: 'عدد النقاط',
+            pointsLabel: 'إجمالي النقاط: ',
+            pointsValue: '120 نقطة',
           ),
           Divider(),
           CustomListItem(
             icon: 'assets/svgs/Verified_Person.svg',
             label: 'المُحفظ',
             onTap: () {
-              // Handle navigation or logic here
+              context.pushNamed(Routes.elmohafezDetailsView);
             },
           ),
           Divider(),

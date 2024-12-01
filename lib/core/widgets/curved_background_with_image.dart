@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:oly_elazm/core/widgets/background_curved_container.dart';
-import 'package:oly_elazm/core/widgets/student_image.dart';
+import 'package:oly_elazm/core/widgets/circle_image.dart';
 
-class StudentProgressHeader extends StatelessWidget {
-  const StudentProgressHeader({
+class CurvedBackgroundWithImage extends StatelessWidget {
+  final String? imagePath;
+
+  const CurvedBackgroundWithImage({
     super.key,
+    this.imagePath,
   });
 
   @override
@@ -13,8 +16,8 @@ class StudentProgressHeader extends StatelessWidget {
       alignment: Alignment.center,
       clipBehavior: Clip.none,
       children: [
-        BackgroundCurvedContainer(),
-        StudentImage(),
+        const BackgroundCurvedContainer(),
+        CircleImage(imagePath: imagePath),
       ],
     );
   }

@@ -12,4 +12,5 @@ class Routes {
   static const String todayMemorization = '/todayMemorization';
   static const String settingView = '/settingView';
   static const String editProfileView = '/editProfileView';
+  static const String elmohafezDetailsView = '/elmohafezDetailsView';
 }

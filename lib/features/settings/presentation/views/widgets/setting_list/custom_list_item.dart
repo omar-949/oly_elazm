@@ -26,13 +26,10 @@ class CustomListItem extends StatelessWidget {
       ),
       title: Text(
         label,
-        style: AppTextStyle.font20Regular(),
+        style: AppTextStyle.font20Regular().copyWith(fontFamily: 'Roboto'),
       ),
-      trailing: Icon(
-        Icons.arrow_forward_ios,
-        size: AppSize.w24,
-        color: AppColors.black,
-      ),
+      trailing:
+        SvgPicture.asset('assets/svgs/arrow-back.svg', width: AppSize.w24,color: AppColors.black,),
       onTap: onTap,
     );
   }

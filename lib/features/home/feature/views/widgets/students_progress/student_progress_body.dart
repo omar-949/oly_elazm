@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/lesson_over_view_card.dart';
+import 'package:oly_elazm/core/widgets/lesson_over_view_card.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_form.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_name_and_points.dart';
-import 'package:oly_elazm/core/widgets/student_progress_header.dart';
+import 'package:oly_elazm/core/widgets/curved_background_with_image.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/student_rating.dart';
 import 'package:oly_elazm/features/home/feature/views/widgets/students_progress/time_remaining.dart';
 
@@ -15,7 +15,7 @@ class StudentProgressBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          StudentProgressHeader(),
+          CurvedBackgroundWithImage(),
           16.verticalSpace,
           StudentNameAndPoints(),
           16.verticalSpace,
