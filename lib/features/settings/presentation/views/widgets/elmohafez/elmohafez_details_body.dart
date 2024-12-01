@@ -6,7 +6,6 @@ import 'elmohafez_rating.dart';
 import 'lesson_overview.dart';
 import 'rating_bar_widget.dart';
 import 'reviews_list.dart';
-import 'rate_with_image.dart';
 
 class ElmohafezDetailsBody extends StatefulWidget {
   const ElmohafezDetailsBody({super.key});

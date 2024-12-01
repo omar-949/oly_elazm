@@ -34,7 +34,6 @@ class ExpandableItem extends StatelessWidget {
       trailing: SvgPicture.asset(
         'assets/svgs/arrow-down.svg',
         width: AppSize.w24,
-        color: AppColors.black,
       ),
       children: [
         Padding(

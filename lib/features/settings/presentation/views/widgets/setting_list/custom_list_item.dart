@@ -29,7 +29,7 @@ class CustomListItem extends StatelessWidget {
         style: AppTextStyle.font20Regular().copyWith(fontFamily: 'Roboto'),
       ),
       trailing:
-        SvgPicture.asset('assets/svgs/arrow-back.svg', width: AppSize.w24,color: AppColors.black,),
+        SvgPicture.asset('assets/svgs/arrow-back.svg', width: AppSize.w24,),
       onTap: onTap,
     );
   }
