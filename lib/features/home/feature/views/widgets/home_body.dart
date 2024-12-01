@@ -41,6 +41,8 @@ class HomeBody extends StatelessWidget {
             title: '۞ حديث اليوم',
             content: 'قال رسول الله صلى الله عليه وسلم: (إنَّ مِن أحبِّكم إليَّ وأقربِكُم منِّي مجلسًا يومَ القيامةِ أحاسنَكُم أخلاقًا)',
           ),
+      12.verticalSpace,
+      StudentSection()
         ],
       ),
     );

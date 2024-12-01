@@ -12,18 +12,15 @@ class CircleImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 32.h,
-      child: CircleAvatar(
-        radius: 50.r,
-        backgroundColor: AppColors.secondaryAppColor,
-        child: ClipOval(
-          child: Image.asset(
-            imagePath ?? 'assets/images/male.png',
-            fit: BoxFit.cover,
-            width: 96.r,
-            height: 96.r,
-          ),
+    return CircleAvatar(
+      radius: 50.r,
+      backgroundColor: AppColors.secondaryAppColor,
+      child: ClipOval(
+        child: Image.asset(
+          imagePath ?? 'assets/images/male.png',
+          fit: BoxFit.cover,
+          width: 96.r,
+          height: 96.r,
         ),
       ),
     );
