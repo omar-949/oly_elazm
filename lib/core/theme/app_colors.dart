@@ -22,6 +22,7 @@ class AppColors {
   static Color get errorLight => const Color(0xFFED4C5C);
   static Color get softWhite => const Color(0xFFFAFAFA);
   static const Color darkSlate = Color(0xFF2E2828);
+  static const Color yellow = Color(0xFFFFD700);
 
 
   // Gradients

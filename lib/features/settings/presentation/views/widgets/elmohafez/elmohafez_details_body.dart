@@ -4,6 +4,7 @@ import 'package:oly_elazm/core/widgets/info_header_section.dart';
 import 'add_comment_section.dart';
 import 'elmohafez_rating.dart';
 import 'lesson_overview.dart';
+import 'rating_bar_widget.dart';
 import 'reviews_list.dart';
 import 'rate_with_image.dart';
 
@@ -76,7 +77,9 @@ class _ElmohafezDetailsBodyState extends State<ElmohafezDetailsBody> {
             userType: 'مُحفظ',
           ),
           15.ph,
-          const RateWithImage(imagePath: 'assets/images/rate_image.png'),
+          const  RatingBarWidget(
+            ratings: [0.8, 0.6, 0.5, 0.3, 0.1],
+          ),
           15.ph,
           const LessonOverview(),
           15.ph,

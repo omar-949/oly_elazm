@@ -77,7 +77,7 @@ class ReviewCard extends StatelessWidget {
                   5,
                       (index) => Icon(
                     index < rating ? Icons.star : Icons.star_border,
-                    color: Colors.yellow,
+                    color: AppColors.yellow,
                     size: 18.r,
                   ),
                 ),
